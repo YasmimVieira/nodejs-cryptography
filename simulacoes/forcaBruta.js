@@ -15,16 +15,14 @@ class Usuario {
             console.log("Usuario autenticado com sucesso")
             return true;
         } 
-        console.log("Usuario ou senha incorretos")
         return false;
     }
 }
 
 const usuario = new Usuario('yasmim', 'senha123')
-console.log(usuario)
 
-// Caso de sucesso
-usuario.autentica('yasmim', 'senha123')
-
-// Caso de erro
-usuario.autentica('yasmim1', 'senha123')
+for (let senhaTeste = 0; senhaTeste < 1000; senhaTeste++) {
+    if(usuario.autentica("yasmim", senhaTeste.toString())) {
+        console.log(`A senha do usuario eh ${senhaTeste}`)
+    }
+}
